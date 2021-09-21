@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function Search(props) {
-  let [city, setCity] = useState("");
+export default function Search() {
+    const [weatherData, setWeatherData] = useState({ready: false})
+    let [city, setCity] = useState("");
+
+  /*
   let [display, setDisplay] = useState(false);
   let [temperature, setTemperature] = useState("");
   let [description, setDescription] = useState("");
   let [humidity, setHumidity] = useState("");
   let [wind, setWind] = useState("");
-  let [icon, setIcon] = useState("");
+  let [icon, setIcon] = useState(""); */
 
   let form = (
     <form
@@ -37,16 +40,24 @@ export default function Search(props) {
   );
   function showTemperature(response) {
       console.log(response.data);
-    setDisplay(true);
+      setWeatherData({
+            ready: true,
+          temperature: response.data.main.temp,
+          humidity: response.data.main.humidity,
+          city: response.data.name,
+          description: response.data.weather[0].description,
+          wind: response.data.wind.speed,
+          iconUrl: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/twitter/282/sun_2600-fe0f.png",
+          date: "Monday 7:00"
+      });
+    /* setDisplay(true);
     setCity(response.data.name);
     setTemperature(Math.round(response.data.main.temp));
     setDescription(response.data.weather[0].description);
     setHumidity(response.data.main.humidity);
     setWind(Math.round(response.data.wind.speed));
-    setIcon(
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-  }
+    setIcon("https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/twitter/282/sun_2600-fe0f.png");
+   */}
 
   function handleSearch(event) {
     event.preventDefault(); 
@@ -58,7 +69,8 @@ export default function Search(props) {
     setCity(event.target.value);
   }
 
-  if (display) {
+
+  if (weatherData.ready) {
   return (
     <nav className="navbar navbar-light">
       <div className="container-fluid">
@@ -68,17 +80,17 @@ export default function Search(props) {
       <div className="row px-2">
         <div className="col">
           <h1>
-          <img src={icon} alt={description} /> {city}</h1>
+          <img src={weatherData.iconUrl} alt={weatherData.description} width="50px" /> {weatherData.city}</h1>
         </div>
       </div>
       <div className="row px-2">
         <div className="col">
-          <h2>Monday, Sep 13, 2021 3:35 PM</h2>
+          <h2>{weatherData.date}</h2>
         </div>
       </div>
       <div className="row px-2">
         <div className="col">
-          <h3>{temperature}˚</h3>
+          <h3>{Math.round(weatherData.temperature)}˚</h3>
           <span>
             <a href="/" className="unit">
               F{" "}
@@ -92,22 +104,24 @@ export default function Search(props) {
       </div>
       <div className="row px-2">
         <div className="col">
-          <h4>{description}</h4>
+          <h4 className="text-capitalize">{weatherData.description}</h4>
         </div>
       </div>
       <div className="row px-2">
         <div className="col">
-          <h4>Wind: {wind} mph</h4>
+          <h4>Wind: {Math.round(weatherData.wind)} mph</h4>
         </div>
       </div>
       <div className="row px-2">
         <div className="col">
-          <h4>Humidity: {humidity}%</h4>
+          <h4>Humidity: {weatherData.humidity}%</h4>
         </div>
       </div>
       <hr />
     </div>
     </nav>
   );
-  } else return form;
+  } else {
+         return form;
+  }
 }
