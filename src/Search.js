@@ -1,18 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormatDate from "./FormatDate";
+import WeatherInfo from "./WeatherInfo";
+
 
 export default function Search() {
     const [weatherData, setWeatherData] = useState({ready: false})
     let [city, setCity] = useState("");
-
-  /*
-  let [display, setDisplay] = useState(false);
-  let [temperature, setTemperature] = useState("");
-  let [description, setDescription] = useState("");
-  let [humidity, setHumidity] = useState("");
-  let [wind, setWind] = useState("");
-  let [icon, setIcon] = useState(""); */
 
   let form = (
     <form
@@ -38,6 +31,7 @@ export default function Search() {
       Current
     </button>
   </form>
+  
   );
   function showTemperature(response) {
       console.log(response.data);
@@ -48,17 +42,10 @@ export default function Search() {
           city: response.data.name,
           description: response.data.weather[0].description,
           wind: response.data.wind.speed,
-          iconUrl: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/twitter/282/sun_2600-fe0f.png",
+          icon: response.data.weather[0].icon,
           date: new Date(response.data.dt * 1000),
       });
-    /* setDisplay(true);
-    setCity(response.data.name);
-    setTemperature(Math.round(response.data.main.temp));
-    setDescription(response.data.weather[0].description);
-    setHumidity(response.data.main.humidity);
-    setWind(Math.round(response.data.wind.speed));
-    setIcon("https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/twitter/282/sun_2600-fe0f.png");
-   */}
+}
 
   function handleSearch(event) {
     event.preventDefault(); 
@@ -76,50 +63,8 @@ export default function Search() {
     <nav className="navbar navbar-light">
       <div className="container-fluid">
         {form}
+        <WeatherInfo data={weatherData}/>
       </div>
-      <div className="weatherData">
-      <div className="row px-2">
-        <div className="col">
-          <h1>
-          <img src={weatherData.iconUrl} alt={weatherData.description} width="50px" /> {weatherData.city}</h1>
-        </div>
-      </div>
-      <div className="row px-2">
-        <div className="col">
-          <h2><FormatDate date={weatherData.date} /></h2>
-        </div>
-      </div>
-      <div className="row px-2">
-        <div className="col">
-          <h3>{Math.round(weatherData.temperature)}˚</h3>
-          <span>
-            <a href="/" className="unit">
-              F{" "}
-            </a>
-            |{" "}
-            <a href="/" className="unit">
-              C
-            </a>
-          </span>
-        </div>
-      </div>
-      <div className="row px-2">
-        <div className="col">
-          <h4 className="text-capitalize">{weatherData.description}</h4>
-        </div>
-      </div>
-      <div className="row px-2">
-        <div className="col">
-          <h4>Wind: {Math.round(weatherData.wind)} mph</h4>
-        </div>
-      </div>
-      <div className="row px-2">
-        <div className="col">
-          <h4>Humidity: {weatherData.humidity}%</h4>
-        </div>
-      </div>
-      <hr />
-    </div>
     </nav>
   );
   } else {
