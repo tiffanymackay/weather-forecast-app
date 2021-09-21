@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormatDate from "./FormatDate";
 
 export default function Search() {
     const [weatherData, setWeatherData] = useState({ready: false})
@@ -48,7 +49,7 @@ export default function Search() {
           description: response.data.weather[0].description,
           wind: response.data.wind.speed,
           iconUrl: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/twitter/282/sun_2600-fe0f.png",
-          date: "Monday 7:00"
+          date: new Date(response.data.dt * 1000),
       });
     /* setDisplay(true);
     setCity(response.data.name);
@@ -85,7 +86,7 @@ export default function Search() {
       </div>
       <div className="row px-2">
         <div className="col">
-          <h2>{weatherData.date}</h2>
+          <h2><FormatDate date={weatherData.date} /></h2>
         </div>
       </div>
       <div className="row px-2">
