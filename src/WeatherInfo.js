@@ -46,7 +46,6 @@ export default function WeatherInfo(props) {
           <h4>Humidity: {props.data.humidity}%</h4>
         </div>
       </div>
-      <hr />
     </div>
     );
 }
