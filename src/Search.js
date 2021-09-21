@@ -19,7 +19,7 @@ export default function Search(props) {
       onChange={updateCity}
       className="form-control me-2 my-2"
       type="search"
-      placeholder="Search"
+      placeholder="Enter a city..."
       aria-label="Search"
     />
     <button
@@ -56,11 +56,55 @@ export default function Search(props) {
     setCity(event.target.value);
   }
 
+  if (display) {
   return (
     <nav className="navbar navbar-light">
       <div className="container-fluid">
         {form}
       </div>
+      <div className="weatherData">
+      <div className="row px-2">
+        <div className="col">
+          <h1><img src={icon} alt={description} /> {city}</h1>
+        </div>
+      </div>
+      <div className="row px-2">
+        <div className="col">
+          <h2>Monday, Sep 13, 2021 3:35 PM</h2>
+        </div>
+      </div>
+      <div className="row px-2">
+        <div className="col">
+          <h3>{temperature}˚</h3>
+          <span>
+            <a href="/" className="unit">
+              F{" "}
+            </a>
+            |{" "}
+            <a href="/" className="unit">
+              C
+            </a>
+          </span>
+        </div>
+      </div>
+      <div className="row px-2">
+        <div className="col">
+          <h4>{description}</h4>
+        </div>
+      </div>
+      <div className="row px-2">
+        <div className="col">
+          <h4>Wind: {wind} mph</h4>
+        </div>
+      </div>
+      <div className="row px-2">
+        <div className="col">
+          <h4>Humidity: {humidity}%</h4>
+        </div>
+      </div>
+      <hr />
+    </div>
     </nav>
   );
+  } else return form;
 }
