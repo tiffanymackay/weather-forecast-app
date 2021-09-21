@@ -36,6 +36,7 @@ export default function Search(props) {
   </form>
   );
   function showTemperature(response) {
+      console.log(response.data);
     setDisplay(true);
     setCity(response.data.name);
     setTemperature(Math.round(response.data.main.temp));
@@ -48,8 +49,9 @@ export default function Search(props) {
   }
 
   function handleSearch(event) {
-    event.preventDefault();    
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=dc249be89a0015c3980887c32be65599`;
+    event.preventDefault(); 
+    let apiKey = `dc249be89a0015c3980887c32be65599`;   
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     axios.get(url).then(showTemperature);
   }
   function updateCity(event) {
@@ -65,7 +67,8 @@ export default function Search(props) {
       <div className="weatherData">
       <div className="row px-2">
         <div className="col">
-          <h1><img src={icon} alt={description} /> {city}</h1>
+          <h1>
+          <img src={icon} alt={description} /> {city}</h1>
         </div>
       </div>
       <div className="row px-2">

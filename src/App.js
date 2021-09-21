@@ -1,4 +1,5 @@
 
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Search from "./Search";
 import Forecast from "./Forecast";
@@ -9,7 +10,17 @@ function App() {
       <div className="container-fluid box">
         <Search />
         <Forecast />
+        <small className="footer">
+          <a href="https://github.com/tiffanymackay/weather-forecast-app" target="_blank" rel="noreferrer">
+            Open-source code  {" "}
+            </a>
+          by  {" "}
+          <a href="https://www.linkedin.com/in/tiffanylmackay/" target="_blank" rel="noreferrer">
+            Tiffany Mackay 
+          </a>
+        </small>
       </div>
+      
     </div>
   );
 }

@@ -64,6 +64,16 @@ weatherData h1 {
   background-color: steelblue;
 }
 
+small {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+small a {
+  text-decoration: none;
+  color: grey;
+}
+
 /*Responsive Styles */
 
 @media (min-width: 801px) and (max-width: 1200px) {
