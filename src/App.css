@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+html {
+  height: 100%;
 }
+body {
+  background: linear-gradient(
+    111.5deg,
+    rgb(228, 247, 255) 21.9%,
+    rgb(255, 216, 194) 92.2%
+  );
+  font-family: "Montserrat", sans-serif !important;
+}
+.App .box {
+  max-width: 60%;
+  margin: 50px auto;
+  padding: 40px;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 2px 2px 1px rgb(0 0 0 / 50%);
+}
+
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.button:hover {
+  cursor: pointer;
+}
+.field {
+  padding: 5px 15px;
+  border-radius: 4px;
+  border: 1px solid cadetblue;
+}
+weatherData h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: steelblue;
+}
+.weatherData h2 {
+  font-size: 1rem;
+  color: gray;
+}
+.weatherData h3 {
+  font-size: 1.5rem;
+  color: steelblue;
+  font-weight: bold;
+  margin: 0px;
+  padding-bottom: 10px;
+}
+.weatherData h4 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0px;
+  padding-bottom: 10px;
+}
+.weatherData .unit {
+  text-decoration: none;
+}
+.Forecast .days {
+  font-weight: 700;
+}
+.App #search {
+  background-color: steelblue;
+}
+
+/*Responsive Styles */
+
+@media (min-width: 801px) and (max-width: 1200px) {
+  body {
+    margin: 10px auto;
+  }
+  .App .box {
+    max-width: 65%;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 800px) {
+  body {
+    margin: 10px auto;
   }
-  to {
-    transform: rotate(360deg);
+  .App .box {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    margin: 10px auto;
+  }
+  .App .box {
+    max-width: 90%;
   }
 }
