@@ -32,30 +32,40 @@ body {
   border-radius: 4px;
   border: 1px solid cadetblue;
 }
-weatherData h1 {
-  font-size: 2rem;
+h1 {
+  font-size: 2.5rem;
   font-weight: bold;
   color: steelblue;
 }
-.weatherData h2 {
+h2 {
   font-size: 1rem;
   color: gray;
 }
-.weatherData h3 {
-  font-size: 1.5rem;
+h3 {
+  font-size: 2rem;
   color: steelblue;
   font-weight: bold;
   margin: 0px;
   padding-bottom: 10px;
 }
-.weatherData h4 {
-  font-size: 1rem;
+h4 {
+  font-size: 1.1rem;
   font-weight: 400;
   margin: 0px;
-  padding-bottom: 10px;
+  padding-bottom: 3px;
+  padding-top: 3px;
 }
-.weatherData .unit {
+.unit {
   text-decoration: none;
+  font-weight: 600;
+  color:steelblue;
+}
+.units {
+  font-size: 1.1rem;
+}
+.conversion {
+  font-weight: 600;
+  color: grey;
 }
 .Forecast .days {
   font-weight: 700;
@@ -63,6 +73,8 @@ weatherData h1 {
 .App #search {
   background-color: steelblue;
 }
+
+
 
 small {
   display: block;
