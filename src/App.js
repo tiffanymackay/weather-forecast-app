@@ -2,14 +2,12 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Search from "./Search";
-import Forecast from "./Forecast";
 
 function App() {
   return (
     <div className="App">
       <div className="container-fluid box">
-        <Search defaultCity="San Francisco"/>
-        <Forecast />
+        <Search defaultCity="Seattle"/>
         <small className="footer">
           <a href="https://github.com/tiffanymackay/weather-forecast-app" target="_blank" rel="noreferrer">
             Open-source code  {" "}

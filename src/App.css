@@ -63,7 +63,7 @@ h4 {
   color:steelblue;
 }
 .unit:hover {
-  color:steelblue;
+  color:darkorange;
   cursor: pointer;
 }
 .units {
@@ -73,12 +73,27 @@ h4 {
   font-weight: 500;
   color: grey;
 }
+.Forecast {
+  width: 700px;
+}
 .Forecast .days {
   font-weight: 700;
 }
 .Forecast .icons {
   max-width: 80px;
   margin: 0 auto;
+}
+.Forecast .high-temp {
+  font-weight: 500;
+}
+.Forecast .low-temp {
+  color: grey;
+  font-weight: 500;
+}
+.temp {
+  align-items: center;
+  display: block;
+  text-align: center;
 }
 .main-icon {
   max-width: 500px;
@@ -109,7 +124,7 @@ small a {
     margin: 10px auto;
   }
   .App .box {
-    max-width: 65%;
+    max-width: 75%;
   }
 }
 @media (max-width: 800px) {
