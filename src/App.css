@@ -18,7 +18,9 @@ body {
   box-shadow: 2px 2px 1px rgb(0 0 0 / 50%);
 }
 
-
+.navbar {
+  max-width: 700px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
