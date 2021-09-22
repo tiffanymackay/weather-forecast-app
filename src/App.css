@@ -76,8 +76,18 @@ h4 {
 .Forecast .days {
   font-weight: 700;
 }
+.Forecast .icons {
+  max-width: 80px;
+  margin: 0 auto;
+}
+.main-icon {
+  max-width: 500px;
+}
 .App #search {
   background-color: steelblue;
+}
+.weatherData {
+  width: 400px;
 }
 
 

@@ -24,5 +24,5 @@ export default function WeatherIcon(props) {
     };
     let imgUrl = `https://basmilius.github.io/weather-icons/production/fill/all/${codeMapping[props.code]}.svg`;
     
-    return <img src={imgUrl} alt="weather icon" width="50px"></img>;
+    return <img src={imgUrl} alt="weather icon" width="90px"></img>;
 }
