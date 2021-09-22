@@ -58,13 +58,17 @@ h4 {
 .unit {
   text-decoration: none;
   font-weight: 600;
+  color:darkorange;
+}
+.unit:hover {
   color:steelblue;
+  cursor: pointer;
 }
 .units {
   font-size: 1.1rem;
 }
 .conversion {
-  font-weight: 600;
+  font-weight: 500;
   color: grey;
 }
 .Forecast .days {

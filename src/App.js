@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <div className="container-fluid box">
-        <Search />
+        <Search defaultCity="San Francisco"/>
         <Forecast />
         <small className="footer">
           <a href="https://github.com/tiffanymackay/weather-forecast-app" target="_blank" rel="noreferrer">

@@ -5,7 +5,7 @@ import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherInfo(props) {
     return (
-        <div className="weatherData">
+      <div className="weatherData">
       <div className="row px-2">
         <div className="col">
           <h1>
