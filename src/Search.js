@@ -54,13 +54,10 @@ export default function Search(props) {
     <button
       value="Search"
       id="search"
-      className="btn btn-secondary mx-1 p-1"
+      className="btn btn-secondary mx-1 p-1 px-3"
       type="submit"
     >
       Search
-    </button>
-    <button className="btn btn-secondary mx-1 p-1" type="submit">
-      Current
     </button>
   </form>
         <WeatherInfo data={weatherData} />
