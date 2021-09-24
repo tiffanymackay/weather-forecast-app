@@ -19,7 +19,7 @@ body {
 }
 
 .navbar {
-  max-width: 700px;
+  margin: 10px;
 }
 .App-logo {
   height: 40vmin;
@@ -70,11 +70,14 @@ h4 {
   font-size: 1.1rem;
 }
 .conversion {
-  font-weight: 500;
-  color: grey;
+  font-size: 16px;
+  position: relative;
+  line-height: 1;
+  top: -15px;
 }
 .Forecast {
   width: 700px;
+  margin: 0 auto;
 }
 .Forecast .days {
   font-weight: 700;
