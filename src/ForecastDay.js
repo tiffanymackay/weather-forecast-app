@@ -6,7 +6,7 @@ export default function ForecastDay(props) {
         let temperature = Math.round(props.data.temp.max);
         return `${temperature}˚`;
     }
-    
+
     function minTemperature() {
         let temperature = Math.round(props.data.temp.min);
         return `${temperature}˚`;
@@ -20,7 +20,7 @@ export default function ForecastDay(props) {
         return days[day];
     }
     return (
-        <div className="col-6 col-sm-4 col-md-2 col-xl-2 py-3">
+        <div>
             <div className="row justify-content-center days">{day()}</div>
             <div className="row justify-content-center icons">
             <WeatherIcon code={props.data.weather[0].icon} />

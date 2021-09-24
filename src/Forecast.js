@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import WeatherIcon from "./WeatherIcon";
 import axios from "axios";
 import ForecastDay from "./ForecastDay";
 
@@ -17,7 +16,6 @@ export default function Forecast(props) {
   }
 
   if (loaded) {
-    console.log(forecast);
     return (
       <div className="Forecast justify-content-start">
         <hr />
@@ -25,8 +23,12 @@ export default function Forecast(props) {
           {forecast.map(function(dailyForecast, index) {
             if (index < 6) {
               return (
-                <ForecastDay data={dailyForecast} />
+                <div  className="col-6 col-sm-4 col-md-2 col-xl-2 py-3" key={index}>
+                  <ForecastDay data={dailyForecast} />
+                </div>
               );
+            } else {
+              return null;
             }
           }
           )}
