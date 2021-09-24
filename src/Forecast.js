@@ -19,7 +19,7 @@ export default function Forecast(props) {
     return (
       <div className="Forecast justify-content-start">
         <hr />
-        <div className="row px-1 mx-auto">
+        <div className="row mx-auto">
           {forecast.map(function(dailyForecast, index) {
             if (index < 6) {
               return (
