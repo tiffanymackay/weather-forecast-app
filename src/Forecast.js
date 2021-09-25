@@ -15,6 +15,15 @@ export default function Forecast(props) {
     setLoaded(true);
   }
 
+  function load() {
+    let apiKey = `608af81e20cb247f5c26d81688ec22f5`;  
+    let lat = props.coordinates.lat;
+    let lon = props.coordinates.lon; 
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
+    
+    axios.get(apiUrl).then(handleResponse);
+  }
+
   if (loaded) {
     return (
       <div className="Forecast justify-content-start">
@@ -37,12 +46,7 @@ export default function Forecast(props) {
     );
     
   } else {
-    let apiKey = `608af81e20cb247f5c26d81688ec22f5`;  
-    let lat = props.coordinates.lat;
-    let lon = props.coordinates.lon; 
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
-    
-    axios.get(apiUrl).then(handleResponse);
+    load();
     return null;
     
   }
