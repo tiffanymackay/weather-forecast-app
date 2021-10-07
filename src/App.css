@@ -137,12 +137,12 @@ small a {
 }
 @media (max-width: 800px) {
   body {
-    margin: 10px auto;
+    margin: 50px auto;
   }
   .App .box {
     max-width: 80%;
-    margin: 20px auto;
-    padding: 20px;
+    margin: 10px auto;
+    padding: 10px;
   }
 }
 @media (max-width: 600px) {
@@ -151,5 +151,10 @@ small a {
   }
   .App .box {
     max-width: 90%;
+  }
+}
+@media (max-width: 400px) {
+  body {
+    margin: 0px auto;
   }
 }
